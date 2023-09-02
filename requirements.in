@@ -1,0 +1,10 @@
+fastapi
+sqlmodel
+twilio
+uvicorn
+
+# Dev
+black
+pytest
+ruff
+xdoctest
