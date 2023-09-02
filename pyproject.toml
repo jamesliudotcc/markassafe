@@ -1,0 +1,3 @@
+[tool.ruff]
+fix = true
+select = ["E", "F", "I", "C90", "N", "D", "B"]

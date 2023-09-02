@@ -5,6 +5,8 @@ uvicorn
 
 # Dev
 black
+ipython
+mypy
 pytest
 ruff
 xdoctest
