@@ -3,9 +3,16 @@ from abc import ABC, abstractmethod
 
 class AbstractRepository(ABC):
     @abstractmethod
-    def add(self, entity):
+    def add(self, entity_type, entity):
+        """Add an entity."""
         raise NotImplementedError
 
     @abstractmethod
-    def get(self, entity):
+    def get(self, entity_type, entity_query: int, skip: int = 0, stride: int = 10):
+        """Get an entity."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def update(self, entity_type, entity_query):
+        """Update an entity."""
         raise NotImplementedError

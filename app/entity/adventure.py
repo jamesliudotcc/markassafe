@@ -1,11 +1,12 @@
+from entity.user import User
 from pydantic import BaseModel
 
 
-class User():
-    pass
-
-class Adventure(BaseModel):
-    id: int
+class BaseAdventure(BaseModel):
     user: User
     location: str
-    status: str  # before | started | qwezrt789-][piuyrewqrtu90hyrewer787645]
+    status: str  # before | started | returned | contacted
+
+
+class Adventure(BaseAdventure):
+    id: int

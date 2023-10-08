@@ -112,7 +112,7 @@ pytz==2023.3
     # via twilio
 requests==2.31.0
     # via twilio
-ruff==0.0.287
+ruff==0.0.292
     # via -r requirements.in
 six==1.16.0
     # via
