@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-from ..entity.entity import Entity
-from .abstract import AbstractRepository
+from app.entity.entity import Entity
+from app.repository.abstract import AbstractRepository
 
 
 def filter_query(result: set[Entity] | list[Entity], entity_query: dict) -> list[dict]:

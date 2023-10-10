@@ -2,8 +2,8 @@
 
 from typing import Optional
 
-from ..entity.entity import Entity
-from .in_memory import filter_query, in_memory_repository
+from app.entity.entity import Entity
+from app.repository.in_memory import filter_query, in_memory_repository
 
 
 class EntityWithId(Entity):

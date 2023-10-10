@@ -1,5 +1,6 @@
 """Service layer"""
 
+from app.config import Config
 from ..config import Config
 
 implemented_repositories = {"IN_MEMORY"}

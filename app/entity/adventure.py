@@ -1,5 +1,6 @@
-from entity.user import User
 from pydantic import BaseModel
+
+from app.entity.user import User
 
 
 class BaseAdventure(BaseModel):
