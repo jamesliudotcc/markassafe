@@ -8,7 +8,10 @@ def filter_query(result: set[Entity] | list[Entity], entity_query: dict) -> list
     """Given a collection of results and an entity query, filter the results to only
     those matching the query."""
     return [
-        r for r in result if all([getattr(r, k) == v for k, v in entity_query.items()])
+        # TODO Fix me
+        r  # type: ignore
+        for r in result
+        if all([getattr(r, k) == v for k, v in entity_query.items()])  # type: ignore
     ]
 
 
@@ -34,7 +37,8 @@ class InMemoryRepository(AbstractRepository):
 
     def add(self, entity_type: str, entity: Entity) -> Entity:
         """Add an entity to the default dict."""
-        entity.id = self.next_id(entity_type)
+        # TODO Fix me
+        entity.id = self.next_id(entity_type)  # type: ignore
 
         self.database[entity_type].append(entity)
 
@@ -62,9 +66,12 @@ class InMemoryRepository(AbstractRepository):
     def get_one(self, type, query):
         return self.get(type, query, stride=1)[0]
 
-    def update(self, entity_type: str, entity_id: int, changes: dict | None) -> Entity:
+    def update(self, entity_type, entity_id: int, changes: dict | None) -> Entity:
         """Changes the object in the database"""
         match = self.get_one(entity_type, {"id": entity_id})
+
+        if not changes:
+            changes = {}
 
         for k, v in changes.items():
             setattr(match, k, v)

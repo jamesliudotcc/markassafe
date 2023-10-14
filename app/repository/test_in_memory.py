@@ -31,8 +31,7 @@ def test_filter_query_by_id_result_exists():
 
 
 def test_filter_query_by_user_id():
-    """When filtering by user id, if the user id exists in results, those are returned.
-    """
+    """When filtering by user id, if the user id exists in results, those are returned."""
     in_memory_repository.delete_all()
     results = [
         AdventureLike(id=1, user_id=1),
@@ -81,5 +80,5 @@ def test_update_adventure():
     in_memory_repository.update("adventure_like", 1, {"active": False})
 
     assert in_memory_repository.get("adventure_like", {"id": 1})[0] == AdventureLike(
-        id= 1, user_id=1, active=False
+        id=1, user_id=1, active=False
     )
