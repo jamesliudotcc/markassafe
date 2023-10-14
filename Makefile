@@ -19,6 +19,8 @@ $(VENV)/bin/activate:
 
 lint: requirements.checksum $(VENV)/bin/activate
 	$(VENV)/bin/ruff .
+	$(VENV)/bin/ruff format .
+	$(VENV)/bin/mypy .
 
 test: requirements.checksum $(VENV)/bin/activate
 	$(VENV)/bin/pytest .
