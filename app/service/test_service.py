@@ -11,6 +11,20 @@ def test_create_user():
     service.create_user(user)
     assert in_memory_repository.get_one("User", {"id": user.id}).name == user.name
 
+
+def test_create_multiple_users():
+    in_memory_repository.delete_all()
+    user1 = User(name="Test1", email="test1@example.com", phone="206-555-1234")
+    service.create_user(user1)
+    user2 = User(name="Test2", email="test2@example.com", phone="206-555-1235")
+    service.create_user(user2)
+    user3 = User(name="Test3", email="test3@example.com", phone="206-555-1236")
+    service.create_user(user3)
+
+    assert in_memory_repository.get_one("User", {"id": user3.id}).name == user3.name
+
+
+
 def test_happy_path():
     in_memory_repository.delete_all()
 
